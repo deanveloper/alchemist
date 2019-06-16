@@ -30,9 +30,9 @@ Flags:
   -i string
         input file to read rules from
   -r string
-        rules: an inline way to declare rules, overrides -i
+        rules to execute with, overrides -i
   -u string
-        universe: the initial atoms in the universe
+        universe of atoms to start with
 ```
 
 <details><summary>Examples of rule sets:</summary>

@@ -7,7 +7,7 @@ This particular implementation has an API, so it can be executed from other Go c
 ## Feature List
 
  * [x] Working API
- * [ ] CLI app to run Alchemy files
+ * [x] CLI app to run Alchemy files
  * [ ] Write tests
 
 <details><summary>Examples:</summary>
@@ -53,7 +53,7 @@ loop+setB+0next -> loop+setNext
 </pre>
 </details>
 
-## CLI Installation (functional, but only does fibonacci example for now. will fix soon.)
+## CLI Installation
 
 Make sure you have [Go](https://golang.org/dl/) installed, and run the following command:
 

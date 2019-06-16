@@ -1,30 +1,69 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"log"
+	"os"
 	"strings"
 
 	"github.com/deanveloper/alchemist"
 )
 
+var (
+	inPath       = flag.String("i", "[file]", "input: the file to read in from")
+	rules        = flag.String("r", "[rules]", "rules: an inline way to declare rules, overrides -i")
+	universeFlag = flag.String("u", "[universe]", "universe: the initial atoms in the universe")
+)
+
 func main() {
-	test := `
-	_ -> Out_"Enter how many numbers you wanna see:"+In_loop+b+setNext+Out_""+Out_"Fibonacci:"+Out_a+Out_b
 
-	loop+a+setNext -> loop+next+setNext
-	loop+b+setNext -> loop+next+setNext+saveB
-	loop+0a+0b+setNext -> Out_next+setA
+	flag.Usage = func() {
+		fmt.Printf("Usage: %s [flags]\n", os.Args[0])
+		fmt.Printf("Flags:\n")
+		flag.PrintDefaults()
+	}
 
-	loop+setA+saveB -> loop+setA+a
-	loop+setA+0saveB -> loop+setB
+	flag.Parse()
 
-	loop+setB+next -> loop+setB+b
-	loop+setB+0next -> loop+setNext
-`
-	rules, universe, err := alchemist.Parse(strings.NewReader(test))
-	if err != nil {
-		fmt.Println("err", err)
+	rules, universe := parseRules()
+
+	// inline universe overrides universe provided by file
+	if *universeFlag != "[universe]" {
+		var univ alchemist.LHSRule
+		err := univ.Parse(*universeFlag)
+		if err != nil {
+			log.Fatalln("error parsing -u:", err)
+		}
+		universe = alchemist.Universe(univ)
 	}
 
 	universe.Run(rules)
+}
+
+func parseRules() ([]alchemist.Rule, alchemist.Universe) {
+	if *rules != "[rules]" {
+		rules, universe, err := alchemist.Parse(strings.NewReader(*rules))
+		if err != nil {
+			log.Fatalf("error parsing -r: %v", err)
+		}
+		return rules, universe
+	}
+
+	if *inPath != "[file]" {
+		f, err := os.Open(*inPath)
+		if err != nil {
+			log.Fatalf("error opening %q: %v", *inPath, err)
+		}
+
+		rules, universe, err := alchemist.Parse(f)
+		if err != nil {
+			log.Fatalf("error parsing %q: %v", *inPath, err)
+		}
+
+		return rules, universe
+	}
+
+	log.Fatalln("required: either -i or -r")
+	return nil, nil
 }

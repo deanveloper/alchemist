@@ -12,24 +12,24 @@ This particular implementation has an API, so it can be executed from other Go c
 
 <details><summary>Examples:</summary>
 
-Hello world
+### Hello world
 <pre>
 _->Out_"Hello, World!"
 </pre>
 
-Hello world (using `!` to determine input universe)
+### Hello world (using `!` to determine input universe)
 <pre>
 x->Out_"Hello, World!"!x
 </pre>
 
-Countdown
+### Countdown
 <pre>
 _->5x
 x->Out_x
 0x->Out_"Liftoff"
 </pre>
 
-Adder
+### Adder
 <pre>
 _ -> a+reqX+Out_"Input 1:"+In_x+Out_"Input 2:"+In_y
 x -> z
@@ -37,7 +37,7 @@ y -> z
 a+0x+0y -> Out_z
 </pre>
 
-Fibonacci
+### Fibonacci
 <pre>
 _ -> Out_"Enter how many numbers you wanna see:"+In_loop+b+setNext+Out_""+Out_"Fibonacci:"+Out_a+Out_b
 

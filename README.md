@@ -2,7 +2,7 @@
 
 Alchemist is a non-deterministic programming language based on chemical reaction networks. [More information here](https://esolangs.org/wiki/Alchemist). This implementation is written in Go, the original implementation can be found [here](https://github.com/bforte/Alchemist). I would suggest reading [the original implementation's README](https://github.com/bforte/Alchemist/blob/master/README.md) to learn about how this particular language works.
 
-This particular implementation has an API, so it can be executed from other Go code. The documentation can be found [here](https://godoc.org/deanveloper/alchemist).
+This particular implementation has an API, so it can be executed from other Go code. The documentation can be found [here](https://godoc.org/github.com/deanveloper/alchemist).
 
 ## Feature List
 

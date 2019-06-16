@@ -53,10 +53,7 @@ loop+setB+0next -> loop+setNext
 </pre>
 </details>
 
-<details><summary>Implementation Restriction</summary>
-Something that was not clarified by the spec was if the `_` atom was provided if an initial universe was also provided. In this implementation, the universe will only start with a `_` atom if there was no default universe provided.</details>
-
-## CLI Installation
+## CLI Installation (functional, but only does fibonacci example for now. will fix soon.)
 
 Make sure you have [Go](https://golang.org/dl/) installed, and run the following command:
 

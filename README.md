@@ -8,6 +8,7 @@ This particular implementation has an API, so it can be executed from other Go c
 
  [x] Working API
  [ ] CLI app to run Alchemy files
+ [ ] Write tests
 
 <details><summary>Examples:</summary>
 

@@ -6,9 +6,9 @@ This particular implementation has an API, so it can be executed from other Go c
 
 ## Feature List
 
- [x] Working API
- [ ] CLI app to run Alchemy files
- [ ] Write tests
+ * [x] Working API
+ * [ ] CLI app to run Alchemy files
+ * [ ] Write tests
 
 <details><summary>Examples:</summary>
 

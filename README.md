@@ -1,4 +1,4 @@
-# Alchemist (🚒 WORK IN PROGRESS 🚒)
+# Alchemist
 
 Alchemist is a non-deterministic programming language based on chemical reaction networks. [More information here](https://esolangs.org/wiki/Alchemist). This implementation is written in Go, the original implementation can be found [here](https://github.com/bforte/Alchemist). I would suggest reading [the original implementation's README](https://github.com/bforte/Alchemist/blob/master/README.md) to learn about how this particular language works.
 

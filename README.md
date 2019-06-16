@@ -10,7 +10,32 @@ This particular implementation has an API, so it can be executed from other Go c
  * [x] CLI app to run Alchemy files
  * [ ] Write tests
 
-<details><summary>Examples:</summary>
+
+## CLI Installation
+
+Make sure you have [Go](https://golang.org/dl/) installed, and run the following commands:
+
+```
+go get github.com/deanveloper/alchemist/cmd
+mv ~/go/bin/cmd ~/go/bin/alchemist
+```
+
+And make sure you have `~/go/bin` added to your `PATH`.
+
+## CLI Usage
+
+```
+Usage: ./alchemist [flags]
+Flags:
+  -i string
+        input file to read rules from
+  -r string
+        rules: an inline way to declare rules, overrides -i
+  -u string
+        universe: the initial atoms in the universe
+```
+
+<details><summary>Examples of rule sets:</summary>
 
 ### Hello world
 <pre>
@@ -52,13 +77,3 @@ loop+setB+next -> loop+setB+b
 loop+setB+0next -> loop+setNext
 </pre>
 </details>
-
-## CLI Installation
-
-Make sure you have [Go](https://golang.org/dl/) installed, and run the following command:
-
-```
-go get github.com/deanveloper/alchemist/cmd
-```
-
-And make sure you have `~/go/bin` added to your `PATH`.
